@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Decision Systems Portfolio | Dan Mehretab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Decision Systems Portfolio home">
+        <span class="brand-mark">DS</span>
+        <span>
+          <strong>Decision Systems Portfolio</strong>
+          <small>Dan Mehretab</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#mars">MARS</a>
+        <a href="#meridian">Meridian</a>
+        <a href="#evidence">Evidence</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">Degree apprenticeship portfolio</p>
+          <h1>I build explainable decision engines for complex systems.</h1>
+          <p class="lead">
+            Two self-directed Python projects: one detects financial market fragility, the other allocates business capital under uncertainty. Both turn messy data into decisions that can be challenged, explained and improved.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#mars">View MARS demo</a>
+            <a class="button secondary" href="#meridian">View Meridian demo</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Portfolio summary">
+          <div class="signal-header">
+            <span>Portfolio thesis</span>
+            <strong>Decision intelligence</strong>
+          </div>
+          <div class="pipeline">
+            <span>Input data</span>
+            <span>Model logic</span>
+            <span>Scenario test</span>
+            <span>Recommendation</span>
+          </div>
+          <div class="metric-grid">
+            <div>
+              <small>Projects</small>
+              <strong>2</strong>
+            </div>
+            <div>
+              <small>Theme</small>
+              <strong>Explainability</strong>
+            </div>
+            <div>
+              <small>Stack</small>
+              <strong>Python + JS</strong>
+            </div>
+            <div>
+              <small>Output</small>
+              <strong>Action</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split">
+        <article class="project-summary">
+          <div class="project-topline">
+            <span class="pill finance">MARS</span>
+            <a href="https://github.com/danmehretab-cyber/mars-market-adaptive-risk-system" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+          <h2>Market Adaptive Risk System</h2>
+          <p>
+            MARS detects when markets are becoming structurally fragile by combining cross-asset volatility, credit, FX, dollar and VIX-style stress features.
+          </p>
+          <ul class="clean-list">
+            <li>Financial risk and regime detection</li>
+            <li>Forward-risk validation and explainable drivers</li>
+            <li>Outputs a risk state and exposure recommendation</li>
+          </ul>
+        </article>
+
+        <article class="project-summary">
+          <div class="project-topline">
+            <span class="pill business">Meridian</span>
+            <a href="https://github.com/danmehretab-cyber/meridian-adaptive-capital-allocation" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+          <h2>Adaptive Capital Allocation Engine</h2>
+          <p>
+            Meridian allocates limited business capital across opportunities by comparing expected return, confidence, risk, liquidity, capacity and scenario survivability.
+          </p>
+          <ul class="clean-list">
+            <li>Commercial capital allocation</li>
+            <li>Scenario testing and deployment warnings</li>
+            <li>Outputs allocation, survivability and evidence gaps</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="mars" class="section dashboard-section">
+        <div class="section-heading">
+          <p class="eyebrow">Live demo 01</p>
+          <h2>MARS: market fragility decision engine</h2>
+          <p>
+            Adjust the drivers to see how the system translates market structure into an explainable risk recommendation.
+          </p>
+        </div>
+
+        <div class="dashboard">
+          <aside class="controls" aria-label="MARS input controls">
+            <label>
+              Credit stress
+              <input id="mars-credit" type="range" min="0" max="100" value="74" />
+            </label>
+            <label>
+              FX turbulence
+              <input id="mars-fx" type="range" min="0" max="100" value="67" />
+            </label>
+            <label>
+              VIX confirmation
+              <input id="mars-vix" type="range" min="0" max="100" value="71" />
+            </label>
+            <label>
+              Market correlation
+              <input id="mars-corr" type="range" min="0" max="100" value="58" />
+            </label>
+            <label>
+              Dollar pressure
+              <input id="mars-dollar" type="range" min="0" max="100" value="64" />
+            </label>
+          </aside>
+
+          <div class="result-panel">
+            <div class="result-main">
+              <small>Current regime</small>
+              <strong id="mars-regime">Fragile</strong>
+              <span id="mars-score">Score 68</span>
+            </div>
+            <div class="recommendation" id="mars-recommendation">
+              Reduce risky exposure to 0.60x and favour defensive allocation.
+            </div>
+            <canvas id="mars-chart" width="640" height="260" aria-label="MARS driver chart"></canvas>
+            <div class="driver-list" id="mars-drivers"></div>
+          </div>
+        </div>
+
+        <div class="explain-block">
+          <h3>What this proves</h3>
+          <p>
+            MARS is not presented as a magic trading model. It is evidence that I can design a risk system: define signals, test forward damage, compare baselines, and explain why a recommendation was produced.
+          </p>
+        </div>
+      </section>
+
+      <section id="meridian" class="section dashboard-section">
+        <div class="section-heading">
+          <p class="eyebrow">Live demo 02</p>
+          <h2>Meridian: capital allocation decision engine</h2>
+          <p>
+            Change risk appetite and available capital to see how the system balances upside, confidence, liquidity and concentration.
+          </p>
+        </div>
+
+        <div class="dashboard">
+          <aside class="controls" aria-label="Meridian input controls">
+            <label>
+              Available capital
+              <input id="meridian-capital" type="range" min="500" max="2000" step="100" value="1000" />
+              <span class="range-value" id="capital-label">GBP 1000</span>
+            </label>
+            <label>
+              Risk appetite
+              <select id="meridian-risk">
+                <option value="conservative">Conservative</option>
+                <option value="balanced" selected>Balanced</option>
+                <option value="aggressive">Aggressive</option>
+              </select>
+            </label>
+            <div class="input-table" aria-label="Opportunity data">
+              <div><strong>Opportunity</strong><strong>Return</strong><strong>Risk</strong></div>
+              <div><span>Paid Ads</span><span>35%</span><span>35%</span></div>
+              <div><span>Content</span><span>45%</span><span>40%</span></div>
+              <div><span>Product</span><span>70%</span><span>60%</span></div>
+              <div><span>Sales</span><span>55%</span><span>45%</span></div>
+            </div>
+          </aside>
+
+          <div class="result-panel">
+            <div class="result-main">
+              <small>Recommended allocation</small>
+              <strong id="meridian-mode">Balanced</strong>
+              <span id="meridian-survival">Scenario survival 5/5</span>
+            </div>
+            <canvas id="meridian-chart" width="640" height="260" aria-label="Meridian allocation chart"></canvas>
+            <div class="allocation-list" id="meridian-allocation"></div>
+            <div class="recommendation" id="meridian-warning">
+              Keep product investment capped until confidence improves.
+            </div>
+          </div>
+        </div>
+
+        <div class="explain-block">
+          <h3>What this proves</h3>
+          <p>
+            Meridian demonstrates commercial awareness: scarce resources, imperfect evidence, risk appetite, scenario planning and explainable allocation. It is a business decision system, not just a spreadsheet.
+          </p>
+        </div>
+      </section>
+
+      <section id="evidence" class="section evidence">
+        <div class="section-heading">
+          <p class="eyebrow">Recruiter evidence</p>
+          <h2>Why this portfolio is different</h2>
+          <p>
+            The point is not that I built two notebooks. The point is that I can take ambiguous real-world problems and turn them into systems with inputs, constraints, tests and explainable outputs.
+          </p>
+        </div>
+
+        <div class="evidence-grid">
+          <div>
+            <h3>Problem solving</h3>
+            <p>Both projects decompose vague decisions into measurable drivers, scoring logic and output recommendations.</p>
+          </div>
+          <div>
+            <h3>Data-driven thinking</h3>
+            <p>MARS uses forward-risk validation; Meridian uses scenario survivability, confidence and risk controls.</p>
+          </div>
+          <div>
+            <h3>Commercial awareness</h3>
+            <p>Meridian directly models capital allocation; MARS models financial exposure and risk control.</p>
+          </div>
+          <div>
+            <h3>Engineering judgement</h3>
+            <p>The public versions separate demos from raw research, archive messy notebooks and show limitations honestly.</p>
+          </div>
+        </div>
+
+        <div class="interview-script">
+          <h3>30-second portfolio pitch</h3>
+          <p>
+            I built two Python decision systems. MARS detects market fragility and recommends risk exposure. Meridian allocates limited business capital across opportunities using confidence, risk and scenario testing. Together they show how I approach complex systems: define the decision, structure the data, model the trade-offs, test the downside and make the recommendation explainable.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Built for degree apprenticeship applications</span>
+      <span>Theme: explainable decision engines</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
